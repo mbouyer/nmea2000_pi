@@ -65,6 +65,9 @@ nmea2000::~nmea2000(void)
 }
 
 void nmea2000::Init() {
+
+    state = UNCONF;
+
     if ((sock = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
 	wxLogSysError(ocpnnmea2000_pi::ErrMsgPrefix() + _("create CAN socket"));
 	return;
@@ -86,8 +89,6 @@ void nmea2000::Init() {
 
 wxThread::ExitCode nmea2000::Entry()
 {
-
-    state = UNCONF;
 
     while (!GetThread()->TestDestroy()) {
 	switch(state) {
