@@ -34,7 +34,7 @@ IF(NOT MSVC)
  ADD_DEFINITIONS( "-Wall -Wno-unused-result -g -O2 -fexceptions" )
  ENDIF(PROFILING)
 
-SET( CMAKE_SHARED_LINKER_FLAGS "-Wl,-Bsymbolic")
+SET( CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-Bsymbolic")
 
 ENDIF(NOT MSVC)
 
