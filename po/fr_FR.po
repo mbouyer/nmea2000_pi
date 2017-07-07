@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: opencpn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-07 12:01-0600\n"
+"PO-Revision-Date: 2017-07-07 16:08-0500\n"
+"Last-Translator: mbouyer <bouyer@antioche.eu.org>\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/ocpnnmea2000_pi.cpp:114
+msgid "NNMEA2000 PlugIn for OpenCPN"
+msgstr "Le complément NMEA2000 pour OpenCPN"
+
+#: src/ocpnnmea2000_pi.cpp:119
+msgid "Send and receive NMEA2000 messages"
+msgstr "Génère et réceptionne des messages NMEA2000"
+
+#: src/NMEA2000.cpp:69
+msgid "create CAN socket"
+msgstr "création de la socket CAN"
+
+#: src/NMEA2000.cpp:78
+msgid "Could not create the management thread"
+msgstr "Impossible de créer le fil de gestion"
+
+#: src/NMEA2000.cpp:82
+msgid "Could not run the management thread!"
+msgstr "Impossible de lancer le fil de gestion"
+
+#: src/NMEA2000.cpp:152
+msgid "read CAN socket"
+msgstr "lecture de la socket CAN"
+
+#: src/NMEA2000.cpp:181
+#, c-format
+msgid "can't get index for CAN interface %s"
+msgstr "impossible d'obtenir l'index de l'interface CAN %s"
+
+#: src/NMEA2000.cpp:189
+#, c-format
+msgid "can't bind CAN socket to %s"
+msgstr "impossible d'attacher la socket CAN à %s"
+
+#: src/NMEA2000Properties.cpp:55
+msgid "Failed to read"
+msgstr "Echec de la lecture"
+
+#: src/NMEA2000Properties.cpp:154
+msgid "failed to save"
+msgstr "Echec de l'écriture"
+
+#: src/NMEA2000PropertiesDialog.cpp:67
+#, c-format
+msgid "NMEA2000 plugin %i.%i %s"
+msgstr "Complément NMEA2000 %i.%i %s"
+
+#: src/NMEA2000PropertiesDialog.cpp:74
+#, c-format
+msgid "NMEA2000 address: %i"
+msgstr "adresse NMEA2000: %i"
+
+#: src/NMEA2000PropertiesDialog.cpp:80
+#, c-format
+msgid "NMEA2000 UniqueNumber: %i"
+msgstr "Identifiant unique NMEA2000: %i"
+
+#: src/NMEA2000PropertiesDialog.cpp:86
+#, c-format
+msgid "NMEA2000 Device Instance: %i"
+msgstr "Instance de périphérique NMEA2000: %i"
+
+#: src/NMEA2000PropertiesDialog.cpp:92
+#, c-format
+msgid "NMEA2000 Manufacturer code: %i"
+msgstr "Code constructeur NMEA2000: %i"
+
+#: src/NMEA2000PropertiesDialog.cpp:97
+msgid "Basic"
+msgstr "Bases"
+
+#: src/NMEA2000PropertiesDialog.cpp:118
+msgid "no interface found"
+msgstr "pas d'interface trouvée"
+
+#: src/NMEA2000PropertiesDialog.cpp:122
+msgid "Interface"
+msgstr "Interface"
+
+#: src/NMEA2000PropertiesDialog.cpp:132
+msgid "Receive"
+msgstr "Réception"
+
+#: src/NMEA2000PropertiesDialog.cpp:142
+msgid "Transmit"
+msgstr "Envoi"
+
+#: src/NMEA2000PropertiesDialog.cpp:148
+msgid "&OK"
+msgstr "&OK"
+
+#: src/NMEA2000PropertiesDialog.cpp:151
+msgid "&Cancel"
+msgstr "&Cancel"

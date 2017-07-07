@@ -1,0 +1,4 @@
+src/ocpnnmea2000_pi.cpp
+src/NMEA2000.cpp
+src/NMEA2000Properties.cpp
+src/NMEA2000PropertiesDialog.cpp

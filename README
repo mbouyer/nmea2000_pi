@@ -1,0 +1,22 @@
+NMEA2000 plugin for OpenCPN
+====================
+
+License
+=======
+The plugin is licensed under the terms of GPL v2 or, at your will, later.
+
+This plugin allows to interface opencpn to a CAN network through the
+socketCAN interface. This means that this plugin will build only on
+an OS which offers the socketCAN API (AFAIK only linux and NetBSD 8.0 or newer
+at this time), and requires either a can loopback interface, or a
+socketCAN-compatible CAN device.
+
+This plugin has been developed and tested on NetBSD 8.0, running on a x86
+host with a CAN loopback interface, and on a Onlimex lime2 board with
+the integrated Allwinner CAN controller.
+
+Note that, although this plugin tries to be compatible with NMEA2000 frames,
+is has not been tested against a real NMEA2000 network, only against
+a network of DIY devices implementing a subset of the J1939 stack.
+It may not work when connected to a NMEA2000 network, and may even
+cause other devices on the network to misbehave. You've been warned ...
