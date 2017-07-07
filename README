@@ -12,7 +12,7 @@ at this time), and requires either a can loopback interface, or a
 socketCAN-compatible CAN device.
 
 This plugin has been developed and tested on NetBSD 8.0, running on a x86
-host with a CAN loopback interface, and on a Onlimex lime2 board with
+host with a CAN loopback interface, and on a Olimex lime2 board with
 the integrated Allwinner CAN controller.
 
 Note that, although this plugin tries to be compatible with NMEA2000 frames,
