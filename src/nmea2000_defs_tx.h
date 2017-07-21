@@ -99,7 +99,7 @@ class iso_address_claim_tx : public nmea2000_frame_tx {
 	    data[3] = manuf >> 3;
 	    data[4] = devinst;
 	    data[5] = devfunc;
-	    data[6] = devclass < 1;
+	    data[6] = devclass << 1;
 	    data[7] = 0x80 | (NMEA2000_INDUSTRY_GROUP << 4) | systinst;
 	};
 };
