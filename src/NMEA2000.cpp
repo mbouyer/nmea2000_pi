@@ -231,6 +231,8 @@ void nmea2000::handle_address_claim(const nmea2000_frame &n2kf)
 		state = DOCLAIM;
 		return;
 	    }
+	    if (n2kf.getdata()[i] > nmea2000_txP->iso_address_claim.getdata()[i])
+		break;
 	}
 	// defend our address. if we can't right now restart the whole process
 	if (!nmea2000_txP->iso_address_claim.send(sock)) 
