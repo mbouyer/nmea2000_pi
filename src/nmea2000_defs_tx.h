@@ -133,6 +133,13 @@ class n2k_navdata_tx : public nmea2000_fastframe_tx {
 	double current_sog;
 };
 
+class n2k_xte_tx : public nmea2000_frame_tx {
+    public:
+	inline n2k_xte_tx() : nmea2000_frame_tx("NMEA2000 Cross-Track Error", true, NMEA2000_XTE, NMEA2000_PRIORITY_INFO, 6) { };
+	virtual void nmeasentence(NMEA0183 *, int, uint8_t);
+};
+
+
 class nmea2000_tx {
     public:
 	nmea2000_tx();
@@ -152,13 +159,15 @@ class nmea2000_tx {
 	n2k_datetime_tx n2k_datetime;
 	n2k_sogcog_tx n2k_sogcog;
 	n2k_navdata_tx n2k_navdata;
+	n2k_xte_tx n2k_xte;
     private:
 
-	std::array<nmea2000_frame_tx *,4> frames_tx = { {
+	std::array<nmea2000_frame_tx *,5> frames_tx = { {
 		&iso_address_claim,
 		&n2k_datetime,
 		&n2k_sogcog,
 		&n2k_navdata,
+		&n2k_xte,
 	} };
 	uint8_t sid;
 	NMEA0183 *m_NMEA0183;

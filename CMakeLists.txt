@@ -44,6 +44,7 @@ SET(SRC_OCPNNMEA2000
 	    src/nmea2000_datetime_tx.cpp
 	    src/nmea2000_sogcog_tx.cpp
 	    src/nmea2000_navdata_tx.cpp
+	    src/nmea2000_xte_tx.cpp
 	    src/nmea2000_attitude_rx.cpp
         )
 
