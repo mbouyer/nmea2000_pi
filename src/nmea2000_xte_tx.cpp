@@ -39,9 +39,9 @@ void n2k_xte_tx::nmeasentence(NMEA0183  *nmea0183, int sock, uint8_t sid)
 		uint82frame(sid, 0);
 		uint82frame(0, 1);
 		if (nmea0183->Apb.DirectionToSteer == Right) {
-			uint322frame( -dist, 2);
+			int322frame( -dist, 2);
 		} else {
-			uint322frame( dist, 2);
+			int322frame( dist, 2);
 		}
 		valid = true;
 		send(sock);
