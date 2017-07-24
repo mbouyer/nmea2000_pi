@@ -93,13 +93,19 @@ class nmea2000_frame {
 	inline void int82frame(int8_t v, int i)
 	    {data[i] = v;}
 	inline void int162frame(int16_t v, int i)
-	    {data[i+1] = (v >> 8) & 0xff; data[i] = v & 0xff;}
+	    {
+		uint16_t *uv = (void *)&v;
+		uint162frame(*uv, i);
+	    }
+	inline void int242frame(int32_t v, int i)
+	    {
+		uint32_t *uv = (void *)&v;
+		uint242frame(*uv, i);
+	    }
 	inline void int322frame(int32_t v, int i)
 	    {
-		data[i+3] = (v >> 24) & 0xff;
-		data[i+2] = (v >> 16) & 0xff;
-		data[i+1] = (v >>  8) & 0xff;
-		data[i] = v & 0xff;
+		uint32_t *uv = (void *)&v;
+		uint322frame(*uv, i);
 	    }
 	inline void uint82frame(u_int8_t v, int i)
 	    {data[i] = v;}
