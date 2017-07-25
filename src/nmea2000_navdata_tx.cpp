@@ -62,8 +62,8 @@ void n2k_navdata_tx::nmeasentence(NMEA0183  *nmea0183, int sock, uint8_t sid)
 	uint82frame(byte, 5);
 	uint322frame(0, 6); // ETA Time
 	uint162frame(0, 10); // ETA Date
-	int162frame(deg2rad(nmea0183->Apb.BearingOriginToDestination), 12);
-	int162frame(deg2rad(nmea0183->Apb.BearingPresentPositionToDestination), 14);
+	uint162frame(udeg2rad(nmea0183->Apb.BearingOriginToDestination), 12);
+	uint162frame(udeg2rad(nmea0183->Apb.BearingPresentPositionToDestination), 14);
 	uint322frame(1, 16); // Origin Waypoint Number
 	uint322frame(2, 20); // Destination Waypoint Number
 	int322frame(0, 24); // Destination Latitude

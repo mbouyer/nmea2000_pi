@@ -90,4 +90,12 @@ inline int deg2rad(double deg)
 	return (int)(rad + 0.5);
 }
 
+inline unsigned int udeg2rad(double deg)
+{
+        double rad;
+
+	rad = deg * 174.53293F;
+	return (unsigned int)(rad + 0.5);
+}
+
 #endif
