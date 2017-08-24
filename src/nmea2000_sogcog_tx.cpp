@@ -31,7 +31,7 @@
 
 void n2k_sogcog_tx::positionfix(PlugIn_Position_Fix_Ex *fix, int sock, uint8_t sid)
 {
-	int cog = deg2rad(fix->Cog);
+	int cog = udeg2rad(fix->Cog);
 	int sog = fix->Sog * 1852.0 / 36.0; /* in m/s * 100 */
 
 	uint82frame(sid, 0);
