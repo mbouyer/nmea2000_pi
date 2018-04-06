@@ -48,7 +48,7 @@ class XTE : public RESPONSE
    public:
 
       XTE();
-     ~XTE();
+     virtual ~XTE();
 
       /*
       ** Data

@@ -47,7 +47,7 @@ class GLL : public RESPONSE
    public:
 
       GLL();
-     ~GLL();
+     virtual ~GLL();
 
       /*
       ** Data

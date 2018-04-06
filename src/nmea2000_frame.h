@@ -48,7 +48,7 @@ class nmea2000_frame {
 	inline nmea2000_frame() {init();}
 	inline nmea2000_frame(struct can_frame *f)
 	    { frame  = f; data = f->data;}
-	inline ~nmea2000_frame() {};
+	virtual ~nmea2000_frame() {};
 	inline bool is_pdu1() const
 	    { return (((frame->can_id >> 16) & 0xff) < 240); };
 	    

@@ -55,7 +55,7 @@ class RTE : public RESPONSE
    public:
 
       RTE();
-     ~RTE();
+     virtual ~RTE();
 
 
       ROUTE_TYPE TypeOfRoute;

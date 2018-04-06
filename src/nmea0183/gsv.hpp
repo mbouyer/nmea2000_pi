@@ -47,7 +47,7 @@ class GSV : public RESPONSE
    public:
 
       GSV();
-     ~GSV();
+     virtual ~GSV();
 
       /*
       ** Data

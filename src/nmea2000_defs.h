@@ -37,6 +37,7 @@ class nmea2000_desc {
 
 	inline nmea2000_desc(const char *desc, bool isuser, int pgn) :
 	    descr(desc), isuser(isuser), pgn(pgn) {enabled = false;}
+	virtual ~nmea2000_desc() {};
 };
 
 #define NMEA2000_PRIORITY_HIGH          0

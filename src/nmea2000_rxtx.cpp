@@ -167,6 +167,11 @@ void nmea2000_frame_tx::nmeasentence(NMEA0183 *s, int sock, uint8_t sid)
 	return;
 }
 
+nmea2000_fastframe_tx::~nmea2000_fastframe_tx()
+{
+	free(userdata);
+}
+
 bool nmea2000_fastframe_tx::send(int sock)
 {
 	int i;

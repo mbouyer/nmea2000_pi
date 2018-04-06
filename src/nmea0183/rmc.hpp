@@ -46,7 +46,7 @@ class RMC : public RESPONSE
    public:
 
       RMC();
-     ~RMC();
+     virtual ~RMC();
 
       /*
       ** Data

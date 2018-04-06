@@ -47,7 +47,7 @@ class WPL : public RESPONSE
    public:
 
       WPL();
-     ~WPL();
+     virtual ~WPL();
 
       /*
       ** Data

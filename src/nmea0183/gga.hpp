@@ -47,7 +47,7 @@ class GGA : public RESPONSE
    public:
 
       GGA();
-     ~GGA();
+     virtual ~GGA();
 
       /*
       ** Data

@@ -47,7 +47,7 @@ class GPWPL : public RESPONSE
    public:
 
       GPWPL();
-     ~GPWPL();
+     virtual ~GPWPL();
 
       /*
       ** Data

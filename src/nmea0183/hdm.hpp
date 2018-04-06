@@ -47,7 +47,7 @@ class HDM : public RESPONSE
    public:
 
       HDM();
-     ~HDM();
+     virtual ~HDM();
 
       /*
       ** Data

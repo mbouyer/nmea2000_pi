@@ -47,7 +47,7 @@ class HDG : public RESPONSE
    public:
 
       HDG();
-     ~HDG();
+     virtual ~HDG();
 
       /*
       ** Data

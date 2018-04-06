@@ -37,7 +37,7 @@ class HDT : public RESPONSE
    public:
 
       HDT();
-     ~HDT();
+     virtual ~HDT();
 
       /*
       ** Data

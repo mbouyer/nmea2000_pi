@@ -38,7 +38,7 @@ class nmea2000_frame_rx : public nmea2000_desc {
 
 	inline nmea2000_frame_rx(const char *desc, bool isuser, int pgn) :
 	    nmea2000_desc(desc, isuser, pgn) { enabled = false; }
-	inline ~nmea2000_frame_rx() {};
+	virtual ~nmea2000_frame_rx() {};
 
 	virtual bool handle(const nmea2000_frame &) { return false;}
 };
@@ -47,13 +47,13 @@ class nmea2000_attitude_rx : public nmea2000_frame_rx {
     public:
 	inline nmea2000_attitude_rx() :
 	    nmea2000_frame_rx("NMEA2000 attitude", true, NMEA2000_ATTITUDE) {};
+	virtual ~nmea2000_attitude_rx() {};
 	bool handle(const nmea2000_frame &f);
 };
 
 class nmea2000_rx {
     public:
 	inline nmea2000_rx() {};
-	inline ~nmea2000_rx() {};
 
 	bool handle(const nmea2000_frame &);
 	const nmea2000_desc *get_byindex(u_int);

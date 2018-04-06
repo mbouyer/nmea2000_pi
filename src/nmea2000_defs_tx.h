@@ -53,6 +53,8 @@ class nmea2000_frame_tx : public nmea2000_frame, public nmea2000_desc {
 		frame->can_dlc = len;
 	    }
 
+	 virtual ~nmea2000_frame_tx() {};
+
 	inline void setsrc(int src)
 	    {
 		frame->can_id = (frame->can_id & ~0xff) | (src & 0xff);
@@ -72,7 +74,7 @@ class nmea2000_fastframe_tx : public nmea2000_frame_tx {
 public:
 	inline nmea2000_fastframe_tx() : nmea2000_frame_tx(), fastlen(233) { init(); }
 	inline nmea2000_fastframe_tx(const char *desc, bool isuser, u_int pgn, u_int pri, u_int len) : nmea2000_frame_tx(desc, isuser, pgn, pri, 8), fastlen(len) { init(); }
-	inline ~nmea2000_fastframe_tx() {free(userdata);}
+	virtual ~nmea2000_fastframe_tx();
 	virtual bool send(int);
 protected:
 	const int fastlen;
@@ -117,6 +119,7 @@ class n2k_datetime_tx : public nmea2000_frame_tx {
 class n2k_sogcog_tx : public nmea2000_frame_tx {
     public:
 	inline n2k_sogcog_tx() : nmea2000_frame_tx("NMEA2000 COG/SOG", true, NMEA2000_COGSOG, NMEA2000_PRIORITY_INFO, 8) { };
+	virtual ~n2k_sogcog_tx() {};
 	virtual void positionfix(PlugIn_Position_Fix_Ex *, int, uint8_t);
 };
 
@@ -124,6 +127,7 @@ class n2k_navdata_tx : public nmea2000_fastframe_tx {
     public:
 	static const int navdata_size = 34;
 	inline n2k_navdata_tx() : nmea2000_fastframe_tx("NMEA2000 Navigation Data", true, NMEA2000_NAVDATA, NMEA2000_PRIORITY_INFO, navdata_size) { apb_ok = false; rmb_ok = false; current_bearing = -1;}
+	virtual ~n2k_navdata_tx() {};
 	virtual void nmeasentence(NMEA0183 *, int, uint8_t);
 	virtual void positionfix(PlugIn_Position_Fix_Ex *, int, uint8_t);
     private:
@@ -136,6 +140,7 @@ class n2k_navdata_tx : public nmea2000_fastframe_tx {
 class n2k_xte_tx : public nmea2000_frame_tx {
     public:
 	inline n2k_xte_tx() : nmea2000_frame_tx("NMEA2000 Cross-Track Error", true, NMEA2000_XTE, NMEA2000_PRIORITY_INFO, 6) { };
+	virtual ~n2k_xte_tx() {};
 	virtual void nmeasentence(NMEA0183 *, int, uint8_t);
 };
 

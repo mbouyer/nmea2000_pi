@@ -48,7 +48,7 @@ class APB : public RESPONSE
    public:
 
       APB();
-     ~APB();
+     virtual ~APB();
 
       /*
       ** Data

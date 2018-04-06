@@ -47,7 +47,7 @@ class VTG : public RESPONSE
    public:
 
       VTG();
-     ~VTG();
+     virtual ~VTG();
 
       /*
       ** Data
