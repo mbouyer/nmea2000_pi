@@ -15,7 +15,7 @@ SET(TITLE_NAME OpenCPNnmea2000)
 SET(CPACK_PACKAGE_CONTACT "Manuel Bouyer")
 
 SET(VERSION_MAJOR "0")
-SET(VERSION_MINOR "4")
+SET(VERSION_MINOR "5")
 
 #SET(CMAKE_BUILD_TYPE Debug)
 
@@ -58,6 +58,7 @@ SET(SRC_NMA0183
 	src/nmea0183/rmb.hpp
 	src/nmea0183/hdm.hpp
 	src/nmea0183/expid.cpp
+	src/nmea0183/hexvalue.cpp
 	src/nmea0183/latlong.cpp
 	src/nmea0183/lat.cpp
 	src/nmea0183/long.cpp
