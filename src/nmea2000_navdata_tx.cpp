@@ -30,6 +30,9 @@
 #include "nmea0183.h"
 #include "ocpn_plugin.h"
 
+static wxString last_To;
+static uint32_t wp_id;
+
 void n2k_navdata_tx::nmeasentence(NMEA0183  *nmea0183, int sock, uint8_t sid)
 {
 	uint8_t byte;
@@ -51,6 +54,11 @@ void n2k_navdata_tx::nmeasentence(NMEA0183  *nmea0183, int sock, uint8_t sid)
 	if (nmea0183->Apb.To != nmea0183->Rmb.To)
 		return;
 
+	if (last_To != nmea0183->Apb.To) {
+		wp_id++;
+		last_To = nmea0183->Apb.To;
+	}
+
 	uint82frame(sid, 0);
 	uint322frame(nmea0183->Rmb.RangeToDestinationNauticalMiles * 185200.0, 1);
 	byte = 0 << 6; /* true */
@@ -65,7 +73,7 @@ void n2k_navdata_tx::nmeasentence(NMEA0183  *nmea0183, int sock, uint8_t sid)
 	uint162frame(udeg2rad(nmea0183->Apb.BearingOriginToDestination), 12);
 	uint162frame(udeg2rad(nmea0183->Apb.BearingPresentPositionToDestination), 14);
 	uint322frame(1, 16); // Origin Waypoint Number
-	uint322frame(2, 20); // Destination Waypoint Number
+	uint322frame(wp_id, 20); // Destination Waypoint Number
 	int322frame(0, 24); // Destination Latitude
 	int322frame(0, 28); // Destination Longitude
 	error = abs(nmea0183->Apb.BearingPresentPositionToDestination - current_bearing);
