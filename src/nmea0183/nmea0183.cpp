@@ -104,13 +104,14 @@ NMEA0183::NMEA0183()
    response_table.Add( (RESPONSE *) &Vtg );
    response_table.Add( (RESPONSE *) &Wcv );
    response_table.Add( (RESPONSE *) &Wnc );
-   response_table.Add( (RESPONSE *) &Xdr );
    response_table.Add( (RESPONSE *) &Xte );
    response_table.Add( (RESPONSE *) &Xtr );
    response_table.Add( (RESPONSE *) &Zda );
    response_table.Add( (RESPONSE *) &Zfo );
    response_table.Add( (RESPONSE *) &Ztg );
 */
+   response_table.Append( (RESPONSE *) &Xdr );
+   response_table.Append( (RESPONSE *) &Mwv );
    response_table.Append( (RESPONSE *) &Apb );
    response_table.Append( (RESPONSE *) &Rmb );
    response_table.Append( (RESPONSE *) &Hdm );

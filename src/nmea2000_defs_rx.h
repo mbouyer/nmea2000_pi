@@ -51,6 +51,22 @@ class nmea2000_attitude_rx : public nmea2000_frame_rx {
 	bool handle(const nmea2000_frame &f);
 };
 
+class nmea2000_env_rx : public nmea2000_frame_rx {
+    public:
+	inline nmea2000_env_rx() :
+	    nmea2000_frame_rx("NMEA2000 environnement params", true, NMEA2000_ENV_PARAM) {};
+	virtual ~nmea2000_env_rx() {};
+	bool handle(const nmea2000_frame &f);
+};
+
+class nmea2000_wind_rx : public nmea2000_frame_rx {
+    public:
+	inline nmea2000_wind_rx() :
+	    nmea2000_frame_rx("NMEA2000 wind data", true, NMEA2000_WIND_DATA) {};
+	virtual ~nmea2000_wind_rx() {};
+	bool handle(const nmea2000_frame &f);
+};
+
 class nmea2000_rx {
     public:
 	inline nmea2000_rx() {};
@@ -62,9 +78,13 @@ class nmea2000_rx {
 
     private:
 	nmea2000_attitude_rx attitude;
+	nmea2000_env_rx env;
+	nmea2000_wind_rx wind;
 
-	std::array<nmea2000_frame_rx *,1> frames_rx = { {
+	std::array<nmea2000_frame_rx *,3> frames_rx = { {
 	    &attitude,
+	    &env,
+	    &wind,
 	} };
 };
 

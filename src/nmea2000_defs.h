@@ -6,7 +6,7 @@
  * Author:   Manuel Bouyer
  *
  ***************************************************************************
- *   Copyright (C) 2017 by Manuel Bouyer
+ *   Copyright (C) 2021 by Manuel Bouyer
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -63,6 +63,9 @@ class nmea2000_desc {
 #define NMEA2000_COGSOG		129026U
 #define NMEA2000_XTE		129283U
 #define NMEA2000_NAVDATA	129284U
+#define NMEA2000_ENV_PARAM	130311U
+#define NMEA2000_WIND_DATA	130306U
+
 
 inline double rad2deg(int rad)
 {

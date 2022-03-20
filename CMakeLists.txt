@@ -46,6 +46,8 @@ SET(SRC_OCPNNMEA2000
 	    src/nmea2000_navdata_tx.cpp
 	    src/nmea2000_xte_tx.cpp
 	    src/nmea2000_attitude_rx.cpp
+	    src/nmea2000_env_rx.cpp
+	    src/nmea2000_wind_rx.cpp
         )
 
 SET(SRC_NMA0183
@@ -57,6 +59,8 @@ SET(SRC_NMA0183
 	src/nmea0183/apb.hpp
 	src/nmea0183/rmb.hpp
 	src/nmea0183/hdm.hpp
+	src/nmea0183/xdr.hpp
+	src/nmea0183/mwv.hpp
 	src/nmea0183/expid.cpp
 	src/nmea0183/hexvalue.cpp
 	src/nmea0183/latlong.cpp
@@ -69,6 +73,8 @@ SET(SRC_NMA0183
 	src/nmea0183/apb.cpp
 	src/nmea0183/rmb.cpp
 	src/nmea0183/hdm.cpp
+	src/nmea0183/xdr.cpp
+	src/nmea0183/mwv.cpp
     )
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src/nmea0183)

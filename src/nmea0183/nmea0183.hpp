@@ -82,7 +82,6 @@
 #include "HSC.hpp"
 #include "LCD.hpp"
 #include "MTW.hpp"
-#include "MWV.hpp"
 #include "OLN.hpp"
 #include "OSD.hpp"
 #include "P.hpp"
@@ -117,12 +116,13 @@
 #include "VTG.hpp"
 #include "WCV.hpp"
 #include "WNC.hpp"
-#include "XDR.hpp"
 #include "XTR.hpp"
 #include "ZDA.hpp"
 #include "ZFO.hpp"
 #include "ZTG.hpp"
 */
+#include "xdr.hpp"
+#include "mwv.hpp"
 #include "apb.hpp"
 #include "rmb.hpp"
 #include "hdm.hpp"
@@ -177,7 +177,6 @@ class NMEA0183
       HSC Hsc;
       LCD Lcd;
       MTW Mtw;
-      MWV Mwv;
       OLN Oln;
       OSD Osd;
       P   Proprietary;
@@ -212,13 +211,14 @@ class NMEA0183
       VTG Vtg;
       WCV Wcv;
       WNC Wnc;
-      XDR Xdr;
       XTE Xte;
       XTR Xtr;
       ZDA Zda;
       ZFO Zfo;
       ZTG Ztg;
 */
+      XDR Xdr;
+      MWV Mwv;
       APB Apb;
       RMB Rmb;
       HDM Hdm;
