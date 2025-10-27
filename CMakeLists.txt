@@ -5,7 +5,7 @@
 ##---------------------------------------------------------------------------
 
 # define minimum cmake version
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
 PROJECT(ocpnnmea2000_pi)
 
